@@ -34,6 +34,7 @@ public class HtmlWrapper {
 "	  <body>" + //
 "	        <a href=\"https://github.com/gwen-interpreter/gwen/wiki/The-Gwen-Logo\"><img src=\"https://github.com/gwen-interpreter/gwen/wiki/img/gwen-attractor.png\"></a>" + //
 "	        <h2>Gwen-Web DSL</h2>" + //
+"           <a href=\"https://github.com/gwen-interpreter/gwen-web/wiki\">&lt; Gwen-Web Wiki</a>" + //
 "	        <hr>" + //
 "	        All feature files must conform to the <a href=\"https://github.com/cucumber/cucumber/wiki/Feature-Introduction\">Gherkin standard for feature files</a>." + //
 "	        The following steps are supported <em>(click on a step for details)</em>:<br><br>" + //
@@ -49,6 +50,7 @@ public class HtmlWrapper {
 "       <div class=\"well well-sm\">" + //
 "    Gwen-web is open sourced at <a href=\"https://github.com/gwen-interpreter/gwen-web\">https://github.com/gwen-interpreter/gwen-web</a> | <a href=\"https://github.com/gwen-interpreter/gwen-web/blob/master/README.md#license\">License</a>" + //
 "    </div>" + //
+"    <a href=\"https://github.com/gwen-interpreter/gwen-web/wiki\">&lt; Gwen-Web Wiki</a>" + //
 "  </body>" + //
 "</html>";
 
