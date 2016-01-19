@@ -39,18 +39,17 @@ public class DocMarkdownToHtml {
 
 		HtmlWrapper htmlWrapper = new HtmlWrapper();
 		
+		outputStream.write((htmlWrapper.formatHead() + "\n").getBytes());
 		for (int ii=0;ii<markdownItems.size(); ii++) {
 			MarkdownItem md = markdownItems.get(ii);
 			outputStream.write(((htmlWrapper.formatPanel(md, ii)) + "\n").getBytes());
 		}
-
+		outputStream.write((htmlWrapper.formatBottom() + "\n").getBytes());
 	}
 
 	private List<MarkdownItem> convertLinesToMarkdown(List<String> lineItems) {
 
 		boolean started = false;
-
-		String here;
 
 		List markdownListItems = new LinkedList<MarkdownItem>();
 		for (String item : lineItems) {
@@ -63,9 +62,6 @@ public class DocMarkdownToHtml {
 			if (!started && tokens[0].contains("----")) {
 				started = true;
 				continue;
-			}
-			if (tokens.length < 3) {
-				here = "here";
 			}
 			if (started) {
 				MarkdownItem markdownItem = new MarkdownItem();

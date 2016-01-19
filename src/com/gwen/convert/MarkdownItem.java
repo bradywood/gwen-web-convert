@@ -1,5 +1,7 @@
 package com.gwen.convert;
 
+import java.util.HashMap;
+
 public class MarkdownItem {
 	
 	private String step;
@@ -38,5 +40,26 @@ public class MarkdownItem {
 
 	public String getParameters() {
 		return parameters;
+	}
+	
+	public HashMap<String, String> getParametersAsKeyValue() {
+		HashMap<String, String> paramKeyValue = new HashMap<String, String>();
+		String[] commas = getParameters().split(" , ");
+		if (commas.length > 1) {
+			for(int ii=0;ii<commas.length;ii++){
+				String[] commasWithNvp = commas[ii].split("=");
+				if (commasWithNvp.length == 2) {
+					paramKeyValue.put(commasWithNvp[0], commasWithNvp[1]);
+				}
+				continue;
+			}
+		}
+		else {
+			String[] commasWithNvp = getParameters().split("=");
+			if (commasWithNvp.length == 2) {
+				paramKeyValue.put(commasWithNvp[0], commasWithNvp[1]);
+			}
+		}
+		return paramKeyValue;
 	}
 }
